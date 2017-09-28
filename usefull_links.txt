@@ -11,6 +11,9 @@
   http://fortranwiki.org/fortran/show/Standards
   https://gcc.gnu.org/wiki/GFortranStandards 
 
+#pretty compact FORTRAN course
+https://www.tutorialspoint.com/fortran/index.htm
+  
 # fortran profound course 
  http://pages.mtu.edu/~shene/COURSES/cs201/NOTES/fortran.html
 
@@ -25,3 +28,8 @@ http://studydoc.ru/doc/4065300/iz-korobki-dostup-k-kontejneram-predostavlyaetsya
 
  alternatively you may consider installing Codeblocks:http://www.codeblocks.org/
  or the visual stuio (community edition) + Intel Composer or PGI COmpiler (community edition) - the most automatized but bulky way
+
+ #git HOWTO
+ http://acm.mipt.ru/twiki/bin/view/Cintro/GitBegginner
+ https://git-scm.com/documentation
+ 
