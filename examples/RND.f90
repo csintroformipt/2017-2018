@@ -1,28 +1,30 @@
-program using_randomzer
+program random_number_generator
 implicit none
-real x(100)             !initialize array for random numbers
-integer x_int(100)      !initializr array for random integers
+integer,parameter:: xSize = 20
+real    x(xSize)          !initialize array for random numbers
+integer x_int(xSize)      !initializr array for random integers
 
-!try running this program without lines 6-21
+!try running this program without lines 8-22
 integer :: n, un, istat 
-integer, allocatable ::seed
+integer, allocatable ::seed(:)
+
 call random_seed(size = n)
 allocate(seed(n))
-open(un, file="/dev/urandom", access="stream", &
+open(newunit=un, file="/dev/urandom", access="stream", &
           form="unformatted", action="read", status="old", iostat=istat)
 if (istat == 0) then
     read(un) seed
     close(un)
 else
-    write (*,*) 'canr read urandom"
+    write (*,*) "can't read urandom"
     stop 1
 end if
-
 call random_seed(put=seed)
 
 call random_number(x)   !initialize x with random numbers 0<=x(i)<1
-x_int=int(11*x)         !initialize x_int with random integers {0,1,2,3,4,5,6,7,8,9,10}
-
-write(*,*) "real_rnd=", x
-write(*,*) "integer_rnd=", x_int
+x_int = int(10*x)         !initialize x_int with random integers {0,..,9}
+write(*,'(A)')     "real_rnd="
+write(*,'(5f6.3)') x
+write(*,'(A)')     "integer_rnd="
+write(*,'(5i3)')   x_int
 end program
